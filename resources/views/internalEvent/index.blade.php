@@ -1,8 +1,9 @@
 @extends('main')
 
-@section("content")
-    <div class="container"><div class="row">
-    @foreach($models as $model)
+@section('content')
+    <div class="container">
+        <div class="row">
+            @foreach($models as $model)
                 <div class="col-4">
                     <div class="card">
                         <div class="card-body">
@@ -19,6 +20,7 @@
                         </div>
                     </div>
                 </div>
-    @endforeach
-    <div/><div/>
+            @endforeach
+        <div/>
+    <div/>
 @endsection
