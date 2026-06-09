@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class InternalEvent extends Model
 {
+    //nazwy z malych liter z uwagi na uzywanie postrges'a
+
     protected $table = "internalevents";
     protected $primaryKey = "id";
 

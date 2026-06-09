@@ -12,11 +12,8 @@
                             . {{$model->contenthtml}} . '
                         </div>
                         <div class="card-footer">
-                            <form method="post">
-                                <input type="hidden" name="id" value="' . {{$model->id}} . '">
-                                <button class="btn btn-primary">Edit</button>
-                                <button class="btn btn-danger">Delete</button>
-                            </form>
+                            <a href="{{ url()->current() }}/edit/{{$model->id}}" class="btn btn-primary">Edit</a>
+                            <a href="{{ url()->current() }}/delete/{{$model->id}}" class="btn btn-danger">Delete</a>
                         </div>
                     </div>
                 </div>

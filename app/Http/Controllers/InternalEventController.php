@@ -15,7 +15,18 @@ class InternalEventController extends Controller
     }
     public function index(){
         $models = $this->internalEventService->getAll();
-        return view('internalEvent.index',["models" => $models]);
+        return view('internalEvent.index',["models" => $models,"title" =>"Internal events"]);
+    }
+
+    public function editView($id){
+        $model = $this->internalEventService->getById($id);
+        return view('internalEvent.edit',["model"=>$model,"title" =>"Internal events"]);
+    }
+
+    public function update(Request $request,$id)
+    {
+        $this->internalEventService->update($request,$id);
+        return redirect("internal-events");
     }
 
 }
