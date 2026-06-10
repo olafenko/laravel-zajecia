@@ -39,4 +39,9 @@ class InternalEventController extends Controller
         return redirect("internal-events");
     }
 
+    public function delete($id){
+        $this->internalEventService->delete($id);
+        return redirect("internal-events");
+    }
+
 }

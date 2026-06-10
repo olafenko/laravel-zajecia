@@ -86,5 +86,13 @@ class InternalEventService {
         return redirect("internal-events");
     }
 
+    public function delete($id){
+
+        $model = InternalEvent::find($id);
+        $model->isactive = false;
+        $model->save();
+        return redirect("internal-events");
+    }
+
 
 }
