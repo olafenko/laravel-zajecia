@@ -6,7 +6,7 @@
     <title>
         Internal Events - All
     </title>
-    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/bootstrap.css" />
     <link
 
         href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+
@@ -24,6 +24,6 @@ Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
 <hr>
 @yield('content')
 
-<script src="js/bootstrap.js"></script>
+<script src="/js/bootstrap.js"></script>
 </body>
 </html>

@@ -25,15 +25,15 @@ class InternalEventService {
             'link'=>'required',
             'contenthtml'=>'required',
             'eventdatetime'=>'required',
-            'iscancelled'=>'required',
-            'ispublic'=>'required',
+//            'iscancelled'=>'required',
+//            'ispublic'=>'required',
         ]);
 
         $model = InternalEvent::find($id);
         $model->title = $request->input('title');
         $model->link = $request->input('link');
-        $model->ispublic = $request->input('ispublic') == 'on' ? true : false;
-        $model->iscancelled = $request->input('iscancelled') == 'on' ? true : false;
+        $model->ispublic = $request->input('ispublic') == 'on' ? false : true;
+        $model->iscancelled = $request->input('iscancelled') == 'on' ? false : true;
         $model->eventdatetime = $request->input('eventdatetime');
         $model->editdatetime = date('y-m-d h:i:s');
         $model->publishdatetime = $request->input('publishdatetime');

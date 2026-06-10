@@ -26,7 +26,7 @@ class InternalEventController extends Controller
     public function update(Request $request,$id)
     {
         $this->internalEventService->update($request,$id);
-        return redirect("internal-events");
+        return redirect("/internal-events");
     }
 
 }
