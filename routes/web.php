@@ -10,3 +10,6 @@ Route::post('/internal-events/update/{id}',[InternalEventController::class,'upda
 Route::get('/internal-events/create',[InternalEventController::class,'createView']);
 Route::post('/internal-events/add-to-db',[InternalEventController::class,'addToDb']);
 Route::post('/internal-events/delete/{id}',[InternalEventController::class,'delete']);
+
+
+
