@@ -7,3 +7,5 @@ Route::get("/", [HomeController::class,"index"]);
 Route::get('/internal-events',[InternalEventController::class,'index']);
 Route::get('/internal-events/edit/{id}',[InternalEventController::class,'editView']);
 Route::post('/internal-events/update/{id}',[InternalEventController::class,'update']);
+Route::get('/internal-events/create',[InternalEventController::class,'createView']);
+Route::post('/internal-events/add-to-db',[InternalEventController::class,'addToDb']);
