@@ -1,8 +1,9 @@
 @extends("main")
 
 @section("menu")
-<a href="/internal-events/create" class="btn btn-primary">Create new</a>
-<a href="/internal-events" class="btn btn-primary">All</a>
+    <a href="/" class="btn btn-primary">Home</a>
+    <a href="/internal-events/create" class="btn btn-primary">Create new</a>
+    <a href="/internal-events" class="btn btn-primary">All</a>
 @endsection
 
 

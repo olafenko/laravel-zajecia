@@ -1,6 +1,7 @@
 @extends('main')
 
 @section("menu")
+    <a href="/" class="btn btn-primary">Home</a>
     <a href="/tasks/create" class="btn btn-primary">Create new</a>
     <a href="/tasks" class="btn btn-primary">All</a>
 @endsection
