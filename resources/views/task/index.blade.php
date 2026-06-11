@@ -19,7 +19,7 @@
                                 <h5 class="card-title mb-0">{{$model->title}}</h5>
                                 <span class="badge {{$model->isdone ? 'bg-success' : 'bg-primary'}}">{{$model->isdone ? 'DONE' : 'TODO'}}</span>
                             </div>
-                            <h6 class="card-subtitle text-muted mb-4">Event: {{$model->eventtitle}}</h6>
+                            <h6 class="card-subtitle text-muted mb-4">Event: {{$model->InternalEvent->title}}</h6>
 
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <div class="text-start">
