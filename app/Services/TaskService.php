@@ -39,6 +39,50 @@ class TaskService
         $model->save();
     }
 
+    public function createModel(){
+
+        $model = new Task();
+        $model->startdatetime = date("Y-m-d H:i:s");
+        $model->deadline = date("Y-m-d H:i:s");
+
+        return $model;
+
+    }
+
+    public function addToDb(Request $request){
+
+        $request->validate([
+            "title"=>"required",
+            "startdatetime"=>"required",
+            "deadline"=>"required",
+            "internaleventid"=>"required",
+            "description"=>"required",
+        ]);
+
+        $model = new Task();
+
+        $model->title = $request->input('title');
+        $model->startdatetime = $request->input('startdatetime');
+        $model->deadline = $request->input('deadline');
+        $model->description = $request->input('description');
+        $model->notes = $request->input('notes');
+        $model->internaleventid = $request->input('internaleventid');
+        $model->isdone = $request->input('isdone') == "on" ? true : false;
+        $model->editdatetime = date('y-m-d h:i:s');
+        $model->creationdatetime = date('y-m-d h:i:s');
+        $model->isactive = true;
+
+        $model->save();
+    }
+
+    public function delete($id){
+
+
+        $model = Task::find($id);
+        $model->isactive = false;
+        $model->save();
+    }
+
 
 
 

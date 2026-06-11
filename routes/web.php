@@ -15,3 +15,6 @@ Route::post('/internal-events/delete/{id}',[InternalEventController::class,'dele
 Route::get('/tasks',[TaskController::class,'index']);
 Route::get('/tasks/edit/{id}',[TaskController::class,'editView']);
 Route::post('/tasks/update/{id}',[TaskController::class,'update']);
+Route::get('/tasks/create',[TaskController::class,'createView']);
+Route::post('/tasks/add-to-db',[TaskController::class,'addToDb']);
+Route::post('/tasks/delete/{id}',[TaskController::class,'delete']);

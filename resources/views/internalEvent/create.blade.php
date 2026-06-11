@@ -19,7 +19,7 @@
                             <i class="material-icons-round align-middle">label</i>
                             Title
                         </label>
-                        <input name="title" class="form-control validate"">
+                        <input name="title" class="form-control validate">
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-6 col-xxl-4">
@@ -28,7 +28,7 @@
                             <i class="material-icons-round align-middle">link</i>
                             Link
                         </label>
-                        <input name="link" class="form-control validate"">
+                        <input name="link" class="form-control validate">
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-6 col-xxl-4">

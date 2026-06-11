@@ -34,4 +34,20 @@ class TaskController extends Controller
         return redirect("/tasks");
     }
 
+    public function createView(){
+        $model = $this->taskService->createModel();
+        $internalEvents = $this->internalEventService->getAll();
+        return view("task.create",["model" => $model,"internalEvents" => $internalEvents,"title" => "Create new task"]);
+    }
+
+    public function addToDb(Request $request){
+       $this->taskService->addToDb($request);
+       return redirect("/tasks");
+    }
+
+    public function delete($id){
+        $this->taskService->delete($id);
+        return redirect("tasks");
+    }
+
 }
