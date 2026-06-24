@@ -9,7 +9,7 @@
 @section("content")
 
     <div class="container mt-4">
-        <form method="POST" action="/tasks/add-to-db/{{$model->id}}">
+        <form method="POST" action="/tasks/add-to-db/{{$model->Id}}">
             @csrf
             <div class="card shadow-sm">
                 <div class="card-header bg-transparent pt-3 pb-2 border-bottom">
@@ -28,7 +28,7 @@
                                         <i class="material-icons-round palette-accent-text-color align-middle fs-6">label</i>
                                         TITLE
                                     </label>
-                                    <input class="form-control validate" name="title">
+                                    <input class="form-control validate" name="Title">
                                 </div>
 
                                 <div class="row">
@@ -37,14 +37,14 @@
                                             <i class="material-icons-round palette-accent-text-color align-middle fs-6">today</i>
                                             START DATE
                                         </label>
-                                        <input class="form-control validate" type="datetime-local" name="startdatetime">
+                                        <input class="form-control validate" type="datetime-local" name="StartDateTime">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label small fw-bold mb-2 d-flex align-items-center">
                                             <i class="material-icons-round palette-accent-text-color align-middle fs-6">event</i>
                                             DEADLINE
                                         </label>
-                                        <input class="form-control validate" type="datetime-local" name="deadline">
+                                        <input class="form-control validate" type="datetime-local" name="Deadline">
                                     </div>
                                 </div>
 
@@ -54,9 +54,9 @@
                                             <i class="material-icons-round palette-accent-text-color align-middle fs-6">event</i>
                                             EVENT
                                         </label>
-                                        <select name="internaleventid"> <option value="" selected disabled hidden>Select event</option>
+                                        <select name="InternalEventId"> <option value="" selected disabled hidden>Select event</option>
                                             @foreach($internalEvents as $event)
-                                                <option value="{{$event->id}}">{{$event->title}}</option>
+                                                <option value="{{$event->Id}}">{{$event->Title}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -66,7 +66,7 @@
                                             Done
                                         </label>
                                         <div class="form-switch form-check mb-0">
-                                            <input class="form-check-input validate" type="checkbox" name="isdone">
+                                            <input class="form-check-input validate" type="checkbox" name="IsDone">
                                         </div>
                                     </div>
                                 </div>
@@ -77,12 +77,12 @@
                                 <i class="material-icons-round palette-accent-text-color align-middle fs-6">feed</i>
                                 DESCRIPTION
                             </label>
-                            <textarea class="form-control validate mb-4" name="description" rows="4"></textarea>
+                            <textarea class="form-control validate mb-4" name="Description" rows="4"></textarea>
                             <label class="form-label small fw-bold mb-2  d-flex align-items-center">
                                 <i class="material-icons-round palette-accent-text-color align-middle fs-6">notes</i>
                                 NOTES
                             </label>
-                            <textarea class="form-control validate" name="notes" rows="2"></textarea>
+                            <textarea class="form-control validate" name="Notes" rows="2"></textarea>
                         </div>
                     </div>
                 </div>

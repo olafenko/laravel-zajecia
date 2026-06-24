@@ -9,7 +9,7 @@
 @section("content")
 
     <div class="container">
-        <form method="POST" action="/internal-events/update/{{$model->id}}">
+        <form method="POST" action="/internal-events/update/{{$model->Id}}">
             @csrf
             <div class="row gy-3">
                 <div class="col-md-12 col-lg-6 col-xxl-4">
@@ -18,7 +18,7 @@
                             <i class="material-icons-round align-middle">label</i>
                             Title
                         </label>
-                        <input name="title" class="form-control validate" value="{{$model->title}}">
+                        <input name="Title" class="form-control validate" value="{{$model->Title}}">
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-6 col-xxl-4">
@@ -27,7 +27,7 @@
                             <i class="material-icons-round align-middle">link</i>
                             Link
                         </label>
-                        <input name="link" class="form-control validate" value="{{$model->link}}">
+                        <input name="Link" class="form-control validate" value="{{$model->Link}}">
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-6 col-xxl-4">
@@ -39,7 +39,7 @@
                             </label>
                         </div>
                         <div class="form-switch form-check col-auto">
-                            <input class="form-check-input validate" type="checkbox" name="ispublic" {{!$model->ispublic ? "checked" : ""}}>
+                            <input class="form-check-input validate" type="checkbox" name="IsPublic" {{!$model->IsPublic ? "checked" : ""}}>
                             <label class="form-check-label">
                                 <i class="material-icons-round align-middle">block</i>
                                 Private
@@ -56,7 +56,7 @@
                             </label>
                         </div>
                         <div class="form-switch form-check col-auto">
-                            <input class="form-check-input validate" type="checkbox" name="iscancelled" {{!$model->iscancelled ? "checked" : ""}}>
+                            <input class="form-check-input validate" type="checkbox" name="IsCancelled" {{!$model->IsCancelled ? "checked" : ""}}>
                             <label class="form-check-label">
                                 <i class="material-icons-round align-middle">public</i>
                                 Active
@@ -70,7 +70,7 @@
                             <i class="material-icons-round palette-accent-text-color align-middle">event</i>
                             Event date
                         </label>
-                        <input name="eventdatetime" class="form-control validate" type="datetime-local" value="{{$model->eventdatetime}}">
+                        <input name="EventDateTime" class="form-control validate" type="datetime-local" value="{{$model->EventDateTime}}">
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-6 col-xxl-4">
@@ -79,7 +79,7 @@
                             <i class="material-icons-round palette-accent-text-color align-middle">today</i>
                             Publish date
                         </label>
-                        <input name="publishdatetime" class="form-control validate" type="datetime-local" value="{{$model->publishdatetime}}">
+                        <input name="PublishDateTime" class="form-control validate" type="datetime-local" value="{{$model->PublishDateTime}}">
                     </div>
                 </div>
                 <div class="col-sm-12">
@@ -87,35 +87,35 @@
                         <i class="material-icons-round palette-accent-text-color align-middle">description</i>
                         Short description
                     </label>
-                    <textarea name="shortdescription" class="form-control validate">{{$model->shortdescription}}</textarea>
+                    <textarea name="ShortDescription" class="form-control validate">{{$model->ShortDescription}}</textarea>
                 </div>
                 <div class="col-sm-12">
                     <label class="form-label">
                         <i class="material-icons-round palette-accent-text-color align-middle">newspaper</i>
                         Content
                     </label>
-                    <textarea name="contenthtml" class="form-control validate">{{$model->contenthtml}}</textarea>
+                    <textarea name="ContentHTML" class="form-control validate">{{$model->ContentHTML}}</textarea>
                 </div>
                 <div class="col-sm-12">
                     <label class="form-label">
                         <i class="material-icons-round palette-accent-text-color align-middle">feed</i>
                         Meta description
                     </label>
-                    <textarea name="metadescription" class="form-control validate">{{$model->metadescription}}</textarea>
+                    <textarea name="MetaDescription" class="form-control validate">{{$model->MetaDescription}}</textarea>
                 </div>
                 <div class="col-sm-12">
                     <label class="form-label">
                         <i class="material-icons-round palette-accent-text-color align-middle">subtitles</i>
                         Meta tags
                     </label>
-                    <textarea name="metatags" class="form-control validate">{{$model->metatags}}</textarea>
+                    <textarea name="MetaTags" class="form-control validate">{{$model->MetaTags}}</textarea>
                 </div>
                 <div class="col-sm-12">
                     <label class="form-label">
                         <i class="material-icons-round palette-accent-text-color align-middle">notes</i>
                         Notes
                     </label>
-                    <textarea name="notes" class="form-control validate">{{$model->notes}}</textarea>
+                    <textarea name="Notes" class="form-control validate">{{$model->Notes}}</textarea>
                 </div>
                 <div class="col-sm-12">
                     <button type="submit" class="btn btn-primary">Update</button>

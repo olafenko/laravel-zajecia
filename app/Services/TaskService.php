@@ -9,7 +9,7 @@ class TaskService
 {
     public function getAll() : Collection {
 
-        return Task::where("isactive","=",true)->get();
+        return Task::where("IsActive","=",true)->get();
     }
 
     public function getById($id){
@@ -19,22 +19,22 @@ class TaskService
     public function update(Request $request,$id){
 
         $request->validate([
-            "title"=>"required",
-            "startdatetime"=>"required",
-            "deadline"=>"required",
-            "internaleventid"=>"required",
-            "description"=>"required",
+            "Title"=>"required",
+            "StartDateTime"=>"required",
+            "Deadline"=>"required",
+            "InternalEventId"=>"required",
+            "Description"=>"required",
         ]);
 
         $model = Task::find($id);
-        $model->title = $request->input('title');
-        $model->startdatetime = $request->input('startdatetime');
-        $model->deadline = $request->input('deadline');
-        $model->description = $request->input('description');
-        $model->notes = $request->input('notes');
-        $model->internaleventid = $request->input('internaleventid');
-        $model->isdone = $request->input('isdone') == "on" ? true : false;
-        $model->editdatetime = date('y-m-d h:i:s');
+        $model->Title = $request->input('Title');
+        $model->StartDateTime = $request->input('StartDateTime');
+        $model->Deadline = $request->input('Deadline');
+        $model->Description = $request->input('Description');
+        $model->Notes = $request->input('Notes');
+        $model->InternalEventId = $request->input('InternalEventId');
+        $model->IsDone = $request->input('IsDone') == "on" ? true : false;
+        $model->EditDateTime = date('Y-m-d h:i:s');
 
         $model->save();
     }
@@ -42,8 +42,8 @@ class TaskService
     public function createModel(){
 
         $model = new Task();
-        $model->startdatetime = date("Y-m-d H:i:s");
-        $model->deadline = date("Y-m-d H:i:s");
+        $model->StartDateTime = date("Y-m-d H:i:s");
+        $model->Deadline = date("Y-m-d H:i:s");
 
         return $model;
 
@@ -52,25 +52,25 @@ class TaskService
     public function addToDb(Request $request){
 
         $request->validate([
-            "title"=>"required",
-            "startdatetime"=>"required",
-            "deadline"=>"required",
-            "internaleventid"=>"required",
-            "description"=>"required",
+            "Title"=>"required",
+            "StartDateTime"=>"required",
+            "Deadline"=>"required",
+            "InternalEventId"=>"required",
+            "Description"=>"required",
         ]);
 
         $model = new Task();
 
-        $model->title = $request->input('title');
-        $model->startdatetime = $request->input('startdatetime');
-        $model->deadline = $request->input('deadline');
-        $model->description = $request->input('description');
-        $model->notes = $request->input('notes');
-        $model->internaleventid = $request->input('internaleventid');
-        $model->isdone = $request->input('isdone') == "on" ? true : false;
-        $model->editdatetime = date('y-m-d h:i:s');
-        $model->creationdatetime = date('y-m-d h:i:s');
-        $model->isactive = true;
+        $model->Title = $request->input('Title');
+        $model->StartDateTime = $request->input('StartDateTime');
+        $model->Deadline = $request->input('Deadline');
+        $model->Description = $request->input('Description');
+        $model->Notes = $request->input('Notes');
+        $model->InternalEventId = $request->input('InternalEventId');
+        $model->IsDone = $request->input('IsDone') == "on" ? true : false;
+        $model->EditDateTime = date('Y-m-d h:i:s');
+        $model->CreationDateTime = date('y-m-d h:i:s');
+        $model->IsActive = true;
 
         $model->save();
     }
@@ -79,7 +79,7 @@ class TaskService
 
 
         $model = Task::find($id);
-        $model->isactive = false;
+        $model->IsActive = false;
         $model->save();
     }
 

@@ -11,7 +11,7 @@ class InternalEventService {
 
     public function getAll() : Collection
     {
-        return InternalEvent::where('isactive','=',true)->get();
+        return InternalEvent::where('IsActive','=',true)->get();
     }
 
     public function getById($id){
@@ -21,27 +21,27 @@ class InternalEventService {
     public function update(Request $request,$id)
     {
         $request->validate([
-            'title'=>'required',
-            'link'=>'required',
-            'contenthtml'=>'required',
-            'eventdatetime'=>'required',
+            'Title'=>'required',
+            'Link'=>'required',
+            'ContentHTML'=>'required',
+            'EventDateTime'=>'required',
 //            'iscancelled'=>'required',
 //            'ispublic'=>'required',
         ]);
 
         $model = InternalEvent::find($id);
-        $model->title = $request->input('title');
-        $model->link = $request->input('link');
-        $model->ispublic = $request->input('ispublic') == 'on' ? false : true;
-        $model->iscancelled = $request->input('iscancelled') == 'on' ? false : true;
-        $model->eventdatetime = $request->input('eventdatetime');
-        $model->editdatetime = date('y-m-d h:i:s');
-        $model->publishdatetime = $request->input('publishdatetime');
-        $model->shortdescription = $request->input('shortdescription');
-        $model->contenthtml = $request->input('contenthtml');
-        $model->metadescription = $request->input('metadescription');
-        $model->metatags = $request->input('metatags');
-        $model->notes = $request->input('notes');
+        $model->Title = $request->input('Title');
+        $model->Link = $request->input('Link');
+        $model->IsPublic = $request->input('IsPublic') == 'on' ? false : true;
+        $model->IsCancelled = $request->input('IsCancelled') == 'on' ? false : true;
+        $model->EventDateTime = $request->input('EventDateTime');
+        $model->EditDateTime = date('Y-M-d h:i:s');
+        $model->PublishDateTime = $request->input('PublishDateTime');
+        $model->ShortDescription = $request->input('ShortDescription');
+        $model->ContentHTML = $request->input('ContentHTML');
+        $model->MetaDescription = $request->input('MetaDescription');
+        $model->MetaTags = $request->input('MetaTags');
+        $model->Notes = $request->input('Notes');
         $model->save();
     }
 
@@ -49,8 +49,8 @@ class InternalEventService {
     {
 
         $model = new InternalEvent();
-        $model->eventdatetime = date("Y-m-d");
-        $model->publishdatetime = date("Y-m-d");
+        $model->EventDateTime = date("Y-m-d");
+        $model->PublishDateTime = date("Y-m-d");
 
         return $model;
     }
@@ -58,10 +58,10 @@ class InternalEventService {
     public function addToDb(Request $request)
     {
         $request->validate([
-            'title'=>'required',
-            'link'=>'required',
-            'contenthtml'=>'required',
-            'eventdatetime'=>'required',
+            'Title'=>'required',
+            'Link'=>'required',
+            'ContentHTML'=>'required',
+            'EventDateTime'=>'required',
 //            'iscancelled'=>'required',
 //            'ispublic'=>'required',
         ]);
@@ -69,19 +69,19 @@ class InternalEventService {
 
         $model = new InternalEvent();
 
-        $model->title = $request->input('title');
-        $model->link = $request->input('link');
-        $model->ispublic = $request->input('ispublic') == 'on' ? false : true;
-        $model->iscancelled = $request->input('iscancelled') == 'on' ? false : true;
-        $model->eventdatetime = $request->input('eventdatetime');
-        $model->editdatetime = date('y-m-d h:i:s');
-        $model->publishdatetime = $request->input('publishdatetime');
-        $model->shortdescription = $request->input('shortdescription');
-        $model->contenthtml = $request->input('contenthtml');
-        $model->metadescription = $request->input('metadescription');
-        $model->metatags = $request->input('metatags');
-        $model->notes = $request->input('notes');
-        $model->isactive = true;
+        $model->Title = $request->input('Title');
+        $model->Link = $request->input('Link');
+        $model->IsPublic = $request->input('IsPublic') == 'on' ? false : true;
+        $model->IsCancelled = $request->input('IsCancelled') == 'on' ? false : true;
+        $model->EventDateTime = $request->input('EventDateTime');
+        $model->EditDateTime = date('Y-M-d h:i:s');
+        $model->PublishDateTime = $request->input('PublishDateTime');
+        $model->ShortDescription = $request->input('ShortDescription');
+        $model->ContentHTML = $request->input('ContentHTML');
+        $model->MetaDescription = $request->input('MetaDescription');
+        $model->MetaTags = $request->input('MetaTags');
+        $model->Notes = $request->input('Notes');
+        $model->IsActive = true;
         $model->save();
         return redirect("internal-events");
     }
@@ -89,7 +89,7 @@ class InternalEventService {
     public function delete($id){
 
         $model = InternalEvent::find($id);
-        $model->isactive = false;
+        $model->IsActive = false;
         $model->save();
         return redirect("internal-events");
     }

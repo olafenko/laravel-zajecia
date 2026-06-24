@@ -7,9 +7,17 @@
 @endsection
 
 @section("content")
-
+    @if($errors->any())
+        <div class="formErrors my-3">
+            <ul class="list-unstyled">
+                @foreach($errors->all() as $error)
+                    <li class="text-center">{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="container mt-4">
-        <form method="POST" action="/tasks/update/{{$model->id}}">
+        <form method="POST" action="/tasks/update/{{$model->Id}}">
             @csrf
             <div class="card shadow-sm">
                 <div class="card-header bg-transparent pt-3 pb-2 border-bottom">
@@ -28,7 +36,7 @@
                                         <i class="material-icons-round palette-accent-text-color align-middle fs-6">label</i>
                                         TITLE
                                     </label>
-                                    <input class="form-control validate" name="title" value="{{$model->title}}">
+                                    <input class="form-control validate" name="Title" value="{{$model->Title}}">
                                 </div>
 
                                 <div class="row">
@@ -37,14 +45,14 @@
                                             <i class="material-icons-round palette-accent-text-color align-middle fs-6">today</i>
                                             START DATE
                                         </label>
-                                        <input class="form-control validate" type="datetime-local" name="startdatetime" value="{{$model->startdatetime}}">
+                                        <input class="form-control validate" type="datetime-local" name="StartDateTime" value="{{$model->StartDateTime}}">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label small fw-bold mb-2 d-flex align-items-center">
                                             <i class="material-icons-round palette-accent-text-color align-middle fs-6">event</i>
                                             DEADLINE
                                         </label>
-                                        <input class="form-control validate" type="datetime-local" name="deadline" value="{{$model->deadline}}">
+                                        <input class="form-control validate" type="datetime-local" name="Deadline" value="{{$model->Deadline}}">
                                     </div>
                                 </div>
 
@@ -54,9 +62,9 @@
                                             <i class="material-icons-round palette-accent-text-color align-middle fs-6">event</i>
                                             EVENT
                                         </label>
-                                        <select name="internaleventid"> <option value="" selected disabled hidden>Select event</option>
+                                        <select name="InternalEventId"> <option value="" selected disabled hidden>Select event</option>
                                         @foreach($internalEvents as $event)
-                                            <option value="{{$event->id}}" {{$event->id == $model->internaleventid ? "selected" : ""}} >{{$event->title}}</option>
+                                            <option value="{{$event->Id}}" {{$event->Id == $model->InternalEventId ? "selected" : ""}} >{{$event->Title}}</option>
                                         @endforeach
                                         </select>
                                     </div>
@@ -66,7 +74,7 @@
                                             Done
                                         </label>
                                         <div class="form-switch form-check mb-0">
-                                            <input class="form-check-input validate" type="checkbox" name="isdone" {{$model->isdone ? "checked" : ""}}>
+                                            <input class="form-check-input validate" type="checkbox" name="IsDone" {{$model->IsDone ? "checked" : ""}}>
                                         </div>
                                     </div>
                                 </div>
@@ -77,12 +85,12 @@
                                 <i class="material-icons-round palette-accent-text-color align-middle fs-6">feed</i>
                                 DESCRIPTION
                             </label>
-                            <textarea class="form-control validate mb-4" name="description" rows="4">{{$model->description}}</textarea>
+                            <textarea class="form-control validate mb-4" name="Description" rows="4">{{$model->Description}}</textarea>
                             <label class="form-label small fw-bold mb-2  d-flex align-items-center">
                                 <i class="material-icons-round palette-accent-text-color align-middle fs-6">notes</i>
                                 NOTES
                             </label>
-                            <textarea class="form-control validate" name="notes" rows="2">{{$model->notes}}</textarea>
+                            <textarea class="form-control validate" name="Notes" rows="2">{{$model->Notes}}</textarea>
                         </div>
                     </div>
                 </div>

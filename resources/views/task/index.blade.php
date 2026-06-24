@@ -16,30 +16,30 @@
                     <div class="card h-100">
                         <div class="card-body">
                             <div class="d-flex justify-content-between  align-items-center mb-2">
-                                <h5 class="card-title mb-0">{{$model->title}}</h5>
-                                <span class="badge {{$model->isdone ? 'bg-success' : 'bg-primary'}}">{{$model->isdone ? 'DONE' : 'TODO'}}</span>
+                                <h5 class="card-title mb-0">{{$model->Title}}</h5>
+                                <span class="badge {{$model->IsDone ? 'bg-success' : 'bg-primary'}}">{{$model->IsDone ? 'DONE' : 'TODO'}}</span>
                             </div>
-                            <h6 class="card-subtitle text-muted mb-4">Event: {{$model->InternalEvent->title}}</h6>
+                            <h6 class="card-subtitle text-muted mb-4">Event: {{$model->internalEvent->Title}}</h6>
 
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <div class="text-start">
                                     <small class="d-block">START</small>
-                                    <strong>{{$model->startdatetime}}</strong>
+                                    <strong>{{$model->StartDateTime}}</strong>
                                 </div>
                                 <div class="text-end">
                                     <small class="d-block">DEADLINE</small>
-                                    <strong>{{$model->deadline}}</strong>
+                                    <strong>{{$model->Deadline}}</strong>
                                 </div>
                             </div>
                             <hr>
                             <div class="mt-3">
-                                <p class="mb-2"><small class="text-muted d-block">DESCRIPTION:</small>{{$model->description}}</p>
-                                <p class="mb-0"><small class="text-muted d-block">NOTES:</small>{{$model->notes}}</p>
+                                <p class="mb-2"><small class="text-muted d-block">DESCRIPTION:</small>{{$model->Description}}</p>
+                                <p class="mb-0"><small class="text-muted d-block">NOTES:</small>{{$model->Notes}}</p>
                             </div>
                         </div>
                         <div class="card-footer">
-                            <a href="{{ url()->current() }}/edit/{{$model->id}}" class="btn btn-primary">Edit</a>
-                            <form class="d-inline" method="post" action="{{ url()->current() }}/delete/{{$model->id}}">
+                            <a href="{{ url()->current() }}/edit/{{$model->Id}}" class="btn btn-primary">Edit</a>
+                            <form class="d-inline" method="post" action="{{ url()->current() }}/delete/{{$model->Id}}">
                                 @csrf
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>

@@ -14,13 +14,13 @@
                 <div class="col-4">
                     <div class="card">
                         <div class="card-body">
-                            <p class="card-title h5">{{$model->title}}</p>
-                            <p><strong>{{$model->shortdescription}}</strong></p>
-                            {{$model->contenthtml}}
+                            <p class="card-title h5">{{$model->Title}}</p>
+                            <p><strong>{{$model->ShortDescription}}</strong></p>
+                            {{$model->ContentHTML}}
                         </div>
                         <div class="card-footer">
-                            <a href="{{ url()->current() }}/edit/{{$model->id}}" class="btn btn-primary">Edit</a>
-                            <form class="d-inline" method="post" action="{{ url()->current() }}/delete/{{$model->id}}">
+                            <a href="{{ url()->current() }}/edit/{{$model->Id}}" class="btn btn-primary">Edit</a>
+                            <form class="d-inline" method="post" action="{{ url()->current() }}/delete/{{$model->Id}}">
                                 @csrf
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
